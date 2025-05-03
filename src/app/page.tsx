@@ -96,7 +96,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-2xl sm:text-3xl text-white mb-8 drop-shadow"
         >
-          기술 기반 PM으로의 전환, 지금이 적기입니다
+          <p>지금이 &quot;적기&quot;입니다</p>
         </motion.p>
         <motion.a
           initial={{ opacity: 0, y: 20 }}
@@ -259,6 +259,20 @@ export default function Home() {
               </h3>
               <p className="text-gray-200">
                 경력자들의 조언을 통해 기술 기반 PM으로의 전환을 준비하세요.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-white/10 p-6 rounded-lg shadow-sm backdrop-blur-sm"
+            >
+              <h3 className="text-xl font-semibold text-gray-100 mb-3">
+                비정기적 뉴스레터 발행
+              </h3>
+              <p className="text-gray-200">
+                기술기반 PM, IT기획, TPM 등 인사이트 정보를 비정기적으로
+                제공합니다.
               </p>
             </motion.div>
           </div>
