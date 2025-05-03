@@ -96,7 +96,9 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-2xl sm:text-3xl text-white mb-8 drop-shadow"
         >
-          <p>기술 기반 PM으로의 전환, 지금이 &quot;적기&quot;입니다</p>
+          <p>
+            기술 기반 PM으로의 전환, <br></br> 지금이 &quot;적기&quot;입니다
+          </p>
         </motion.p>
         <motion.a
           initial={{ opacity: 0, y: 20 }}
@@ -122,10 +124,11 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-100 mb-4">
-              왜 기술 기반 PM이 되어야 할까요?
+              왜 기술 기반 PM이 <br></br> 되어야 할까요?
             </h2>
             <p className="text-xl text-gray-200">
-              AI 시대, 더 이상 &ldquo;기획만 잘하는 PM&rdquo;으로는 부족합니다.
+              AI 시대, 더 이상 <br></br> &ldquo;기획만 잘하는 PM&rdquo;으로는
+              부족합니다.
             </p>
             <p className="text-xl text-gray-200">
               개발만 잘하는 개발자도 안전하지 않죠.
@@ -192,7 +195,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-100">
-              우리 커뮤니티에서 얻을 수 있는 것
+              우리 커뮤니티에서 <br></br> 얻을 수 있는 것
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -289,7 +292,7 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl font-bold text-white mb-6">
-            지금 바로 기술 기반 PM으로의 전환을 시작하세요
+            지금 바로 기술 기반 PM으로의 <br></br> 전환을 시작하세요
           </h2>
           <p className="text-xl text-indigo-100 mb-8">
             AI 시대를 이끌어갈 기술 기반 PM이 되고 싶은 모든 분들을 환영합니다
