@@ -110,7 +110,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-2xl sm:text-3xl text-white mb-8 drop-shadow"
               >
-                기술 기반 PM으로의 전환, <br /> 지금이 적기입니다
+                Tech PM으로의 전환, <br /> 지금이 적기입니다
               </motion.p>
               <motion.a
                 key="cta"
@@ -123,7 +123,7 @@ export default function Home() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 border-2 border-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 rounded-full text-lg font-bold text-white bg-transparent hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-400 hover:to-blue-400 hover:text-[#0a2342] transition drop-shadow"
               >
-                기술 기반 PM 되기
+                Tech PM 되기
               </motion.a>
               <motion.p
                 key="quote"
@@ -152,7 +152,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-gray-100 mb-4">
-              왜 기술 기반 PM이 <br /> 되어야 할까요?
+              왜 Tech PM이 <br /> 되어야 할까요?
             </h2>
             <p className="text-xl text-gray-200">
               AI 시대, 더 이상 <br /> &ldquo;기획만 잘하는 PM&rdquo;으로는
@@ -174,8 +174,8 @@ export default function Home() {
               </h3>
               <p className="text-gray-200">
                 기술을 이해하지 못하면 개발자들과의 효과적인 소통이 어렵습니다.
-                기술 기반 PM은 개발 흐름과 시스템 구조를 이해하여 더 나은
-                의사결정을 할 수 있습니다.
+                Tech PM은 개발 흐름과 시스템 구조를 이해하여 더 나은 의사결정을
+                할 수 있습니다.
               </p>
             </motion.div>
             <motion.div
@@ -189,8 +189,8 @@ export default function Home() {
               </h3>
               <p className="text-gray-200">
                 AI가 코딩을 대체하는 시대, 단순 코딩만 하는 개발자도 안전하지
-                않습니다. 기술 기반 PM은 개발지식을 바탕으로 AI와 함께 일하는
-                방법을 이해하고 활용할 수 있습니다.
+                않습니다. Tech PM은 개발지식을 바탕으로 AI와 함께 일하는 방법을
+                이해하고 활용할 수 있습니다.
               </p>
             </motion.div>
             <motion.div
@@ -204,8 +204,7 @@ export default function Home() {
               </h3>
               <p className="text-gray-200">
                 기획, 개발, 데이터 분석까지 폭넓은 이해를 통해 더 나은 제품과
-                서비스를 만들 수 있습니다. 기술 기반 PM은 미래의 필수
-                역량입니다.
+                서비스를 만들 수 있습니다. Tech PM은 미래의 필수 역량입니다.
               </p>
             </motion.div>
           </div>
@@ -250,7 +249,7 @@ export default function Home() {
                 채용 정보
               </h3>
               <p className="text-gray-200">
-                기술 기반 PM을 찾는 기업들의 채용 정보를 한 곳에서 확인하세요.
+                Tech PM을 찾는 기업들의 채용 정보를 한 곳에서 확인하세요.
               </p>
             </motion.div>
             <motion.div
@@ -263,7 +262,7 @@ export default function Home() {
                 역량진단 체크리스트
               </h3>
               <p className="text-gray-200">
-                기술 기반 PM으로서의 역량을 진단하고 발전시킬 수 있습니다.
+                Tech PM으로서의 역량을 진단하고 발전시킬 수 있습니다.
               </p>
             </motion.div>
             <motion.div
@@ -289,7 +288,7 @@ export default function Home() {
                 커리어 상담
               </h3>
               <p className="text-gray-200">
-                경력자들의 조언을 통해 기술 기반 PM으로의 전환을 준비하세요.
+                경력자들의 조언을 통해 Tech PM으로의 전환을 준비하세요.
               </p>
             </motion.div>
             <motion.div
@@ -302,8 +301,7 @@ export default function Home() {
                 비정기적 뉴스레터 발행
               </h3>
               <p className="text-gray-200">
-                기술기반 PM, IT기획, TPM 등 인사이트 정보를 비정기적으로
-                제공합니다.
+                Tech PM, IT기획, TPM 등 인사이트 정보를 비정기적으로 제공합니다.
               </p>
             </motion.div>
           </div>
@@ -320,10 +318,10 @@ export default function Home() {
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h2 className="text-3xl font-bold text-white mb-6">
-            지금 바로 기술 기반 PM으로의 <br /> 전환을 시작하세요
+            지금 바로 Tech PM으로의 <br /> 전환을 시작하세요
           </h2>
           <p className="text-xl text-indigo-100 mb-8">
-            AI 시대를 이끌어갈 기술 기반 PM이 되고 싶은 모든 분들을 환영합니다
+            AI 시대를 이끌어갈 Tech PM이 되고 싶은 모든 분들을 환영합니다
           </p>
           <a
             href="https://discord.gg/argBtG44"
