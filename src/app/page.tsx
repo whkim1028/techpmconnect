@@ -125,7 +125,7 @@ export default function Home() {
               왜 기술 기반 PM이 되어야 할까요?
             </h2>
             <p className="text-xl text-gray-200">
-              AI 시대, 더 이상 "기획만 잘하는 PM"으로는 부족합니다.
+              AI 시대, 더 이상 &ldquo;기획만 잘하는 PM&rdquo;으로는 부족합니다.
             </p>
             <p className="text-xl text-gray-200">
               개발만 잘하는 개발자도 안전하지 않죠.
