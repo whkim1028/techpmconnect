@@ -125,6 +125,17 @@ export default function Home() {
               >
                 기술 기반 PM 되기
               </motion.a>
+              <motion.p
+                key="quote"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="text-sm sm:text-base text-gray-300 mt-4 max-w-md mx-auto"
+              >
+                AI는 역할을 줄입니다. <br /> 하지만 &lsquo;기술을 이해하는
+                사람&rsquo;은 그 역할을 더 크게 만듭니다.
+              </motion.p>
             </>
           )}
         </AnimatePresence>
