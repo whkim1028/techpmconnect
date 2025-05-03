@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Metadata } from "next";
 
 const gradients = [
   // 각 레이어별로 다른 색상, 위치, 애니메이션 딜레이
@@ -70,6 +71,33 @@ const sectionGradients = [
     className: "absolute w-2/3 h-2/3 right-0 top-0",
   },
 ];
+
+export const metadata: Metadata = {
+  title: "테크 PM 커넥트",
+  description: "기술 기반 PM으로의 전환, 지금이 적기입니다",
+  openGraph: {
+    title: "테크 PM 커넥트",
+    description: "기술 기반 PM으로의 전환, 지금이 적기입니다",
+    url: "https://techpmconnect.netlify.app/",
+    siteName: "테크 PM 커넥트",
+    images: [
+      {
+        url: "/og-image.png", // 이 이미지는 public 폴더에 있어야 합니다
+        width: 1200,
+        height: 630,
+        alt: "테크 PM 커넥트",
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "테크 PM 커넥트",
+    description: "기술 기반 PM으로의 전환, 지금이 적기입니다",
+    images: ["/og-image.png"],
+  },
+};
 
 export default function Home() {
   return (
