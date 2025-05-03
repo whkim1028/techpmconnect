@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const gradients = [
@@ -73,15 +73,11 @@ const sectionGradients = [
 ];
 
 export default function Home() {
-  const [mounted, setMounted] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    setIsClient(true);
   }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <main className="min-h-screen bg-[#0a2342] relative overflow-hidden">
@@ -93,33 +89,45 @@ export default function Home() {
       </div>
       {/* Hero Section */}
       <section className="relative z-10 flex flex-col items-center justify-center h-screen text-center">
-        <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-5xl sm:text-7xl font-bold mb-6 bg-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 bg-clip-text text-transparent drop-shadow-lg"
-        >
-          테크 PM 커넥트
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-2xl sm:text-3xl text-white mb-8 drop-shadow"
-        >
-          기술 기반 PM으로의 전환, <br /> 지금이 적기입니다
-        </motion.p>
-        <motion.a
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          href="https://discord.gg/argBtG44"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center px-8 py-4 border-2 border-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 rounded-full text-lg font-bold text-white bg-transparent hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-400 hover:to-blue-400 hover:text-[#0a2342] transition drop-shadow"
-        >
-          디스코드 참여하기
-        </motion.a>
+        <AnimatePresence>
+          {isClient && (
+            <>
+              <motion.h1
+                key="title"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.8 }}
+                className="text-5xl sm:text-7xl font-bold mb-6 bg-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 bg-clip-text text-transparent drop-shadow-lg"
+              >
+                테크 PM 커넥트
+              </motion.h1>
+              <motion.p
+                key="subtitle"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="text-2xl sm:text-3xl text-white mb-8 drop-shadow"
+              >
+                기술 기반 PM으로의 전환, <br /> 지금이 적기입니다
+              </motion.p>
+              <motion.a
+                key="cta"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                href="https://discord.gg/argBtG44"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-8 py-4 border-2 border-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 rounded-full text-lg font-bold text-white bg-transparent hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-400 hover:to-blue-400 hover:text-[#0a2342] transition drop-shadow"
+              >
+                기술 기반 PM 되기
+              </motion.a>
+            </>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* Why Section */}
@@ -312,7 +320,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 border-2 border-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 rounded-full text-lg font-bold text-white bg-transparent hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-400 hover:to-blue-400 hover:text-[#0a2342] transition drop-shadow"
           >
-            디스코드 참여하기
+            함께 성장할 사람들 만나기
           </a>
         </div>
       </section>
