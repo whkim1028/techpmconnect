@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "테크 PM 커넥트",
     description: "기술 기반 PM으로의 전환, 지금이 적기입니다",
-    url: "https://techpmconnect.netlify.app/",
+    url: "https://tech-pm-connect.netlify.app/",
     siteName: "테크 PM 커넥트",
     images: [
       {
