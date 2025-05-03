@@ -5,16 +5,37 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "테크 PM 커넥트 - 기술 기반 PM 커뮤니티",
-  description:
-    "기술 기반 PM을 지향하는 사람들이 모인 커뮤니티. 최신 IT 동향, 채용 정보, 역량진단, 네트워킹, 커리어 상담을 제공합니다.",
+  title: "테크 PM 커넥트",
+  description: "기술 기반 PM으로의 전환, 지금이 적기입니다",
+  openGraph: {
+    title: "테크 PM 커넥트",
+    description: "기술 기반 PM으로의 전환, 지금이 적기입니다",
+    url: "https://techpmconnect.netlify.app/",
+    siteName: "테크 PM 커넥트",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "테크 PM 커넥트",
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "테크 PM 커넥트",
+    description: "기술 기반 PM으로의 전환, 지금이 적기입니다",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="ko">
       <body className={inter.className}>{children}</body>
