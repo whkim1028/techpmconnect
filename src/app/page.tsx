@@ -1,103 +1,295 @@
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+
+const gradients = [
+  // 각 레이어별로 다른 색상, 위치, 애니메이션 딜레이
+  {
+    style: {
+      background:
+        "radial-gradient(circle at 20% 40%, #ff6ec4 0%, transparent 70%)",
+      filter: "blur(120px)",
+      opacity: 0.7,
+      animationDelay: "0s",
+    },
+    className:
+      "absolute w-[80vw] h-[60vw] left-[-10vw] top-[-10vw] animate-move1",
+  },
+  {
+    style: {
+      background:
+        "radial-gradient(circle at 80% 30%, #42e695 0%, transparent 70%)",
+      filter: "blur(100px)",
+      opacity: 0.5,
+      animationDelay: "2s",
+    },
+    className:
+      "absolute w-[70vw] h-[50vw] right-[-10vw] top-[-5vw] animate-move2",
+  },
+  {
+    style: {
+      background:
+        "radial-gradient(circle at 50% 80%, #7873f5 0%, transparent 70%)",
+      filter: "blur(140px)",
+      opacity: 0.6,
+      animationDelay: "4s",
+    },
+    className: "absolute w-[90vw] h-[60vw] left-0 bottom-[-20vw] animate-move3",
+  },
+  {
+    style: {
+      background:
+        "radial-gradient(circle at 60% 60%, #3bb2b8 0%, transparent 70%)",
+      filter: "blur(100px)",
+      opacity: 0.4,
+      animationDelay: "1s",
+    },
+    className:
+      "absolute w-[60vw] h-[40vw] right-0 bottom-[-10vw] animate-move4",
+  },
+];
+
+// 하단 섹션용 은은한 그라데이션
+const sectionGradients = [
+  {
+    style: {
+      background:
+        "radial-gradient(circle at 10% 80%, #ff6ec4 0%, transparent 80%)",
+      filter: "blur(80px)",
+      opacity: 0.18,
+    },
+    className: "absolute w-2/3 h-2/3 left-0 bottom-0",
+  },
+  {
+    style: {
+      background:
+        "radial-gradient(circle at 90% 20%, #42e695 0%, transparent 80%)",
+      filter: "blur(80px)",
+      opacity: 0.13,
+    },
+    className: "absolute w-2/3 h-2/3 right-0 top-0",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen bg-[#0a2342] relative overflow-hidden">
+      {/* 몽환적 그라데이션 배경 레이어 (Hero) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        {gradients.map((g, i) => (
+          <div key={i} style={g.style} className={g.className}></div>
+        ))}
+      </div>
+      {/* Hero Section */}
+      <section className="relative z-10 flex flex-col items-center justify-center h-screen text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl sm:text-7xl font-bold mb-6 bg-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 bg-clip-text text-transparent drop-shadow-lg"
+        >
+          테크 PM 커넥트
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="text-2xl sm:text-3xl text-white mb-8 drop-shadow"
+        >
+          기술 기반 PM으로의 전환, 지금이 적기입니다
+        </motion.p>
+        <motion.a
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          href="https://discord.gg/argBtG44"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-8 py-4 border-2 border-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 rounded-full text-lg font-bold text-white bg-transparent hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-400 hover:to-blue-400 hover:text-[#0a2342] transition drop-shadow"
+        >
+          디스코드 참여하기
+        </motion.a>
+      </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* Why Section */}
+      <section className="relative py-20 bg-transparent z-10 overflow-hidden">
+        {/* 은은한 그라데이션 배경 */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {sectionGradients.map((g, i) => (
+            <div key={i} style={g.style} className={g.className}></div>
+          ))}
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-100 mb-4">
+              왜 기술 기반 PM이 되어야 할까요?
+            </h2>
+            <p className="text-xl text-gray-200">
+              AI 시대, 더 이상 "기획만 잘하는 PM"으로는 부족합니다.
+            </p>
+            <p className="text-xl text-gray-200">
+              개발만 잘하는 개발자도 안전하지 않죠.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0 }}
+              className="bg-white/10 p-8 rounded-lg shadow-sm text-center backdrop-blur-sm"
+            >
+              <h3 className="text-xl font-semibold text-gray-100 mb-3">
+                개발자와의 소통
+              </h3>
+              <p className="text-gray-200">
+                기술을 이해하지 못하면 개발자들과의 효과적인 소통이 어렵습니다.
+                기술 기반 PM은 개발 흐름과 시스템 구조를 이해하여 더 나은
+                의사결정을 할 수 있습니다.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white/10 p-8 rounded-lg shadow-sm text-center backdrop-blur-sm"
+            >
+              <h3 className="text-xl font-semibold text-gray-100 mb-3">
+                AI 시대의 생존
+              </h3>
+              <p className="text-gray-200">
+                AI가 코딩을 대체하는 시대, 단순 코딩만 하는 개발자도 안전하지
+                않습니다. 기술 기반 PM은 개발지식을 바탕으로 AI와 함께 일하는
+                방법을 이해하고 활용할 수 있습니다.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white/10 p-8 rounded-lg shadow-sm text-center backdrop-blur-sm"
+            >
+              <h3 className="text-xl font-semibold text-gray-100 mb-3">
+                역량의 확장
+              </h3>
+              <p className="text-gray-200">
+                기획, 개발, 데이터 분석까지 폭넓은 이해를 통해 더 나은 제품과
+                서비스를 만들 수 있습니다. 기술 기반 PM은 미래의 필수
+                역량입니다.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="relative py-20 bg-transparent z-10 overflow-hidden">
+        {/* 은은한 그라데이션 배경 */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {sectionGradients.map((g, i) => (
+            <div key={i} style={g.style} className={g.className}></div>
+          ))}
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold text-gray-100">
+              우리 커뮤니티에서 얻을 수 있는 것
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0 }}
+              className="bg-white/10 p-6 rounded-lg shadow-sm backdrop-blur-sm"
+            >
+              <h3 className="text-xl font-semibold text-gray-100 mb-3">
+                최신 IT 동향 뉴스
+              </h3>
+              <p className="text-gray-200">
+                AI, 개발 트렌드 등 최신 기술 동향을 매일 제공합니다.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="bg-white/10 p-6 rounded-lg shadow-sm backdrop-blur-sm"
+            >
+              <h3 className="text-xl font-semibold text-gray-100 mb-3">
+                채용 정보
+              </h3>
+              <p className="text-gray-200">
+                기술 기반 PM을 찾는 기업들의 채용 정보를 한 곳에서 확인하세요.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="bg-white/10 p-6 rounded-lg shadow-sm backdrop-blur-sm"
+            >
+              <h3 className="text-xl font-semibold text-gray-100 mb-3">
+                역량진단 체크리스트
+              </h3>
+              <p className="text-gray-200">
+                기술 기반 PM으로서의 역량을 진단하고 발전시킬 수 있습니다.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white/10 p-6 rounded-lg shadow-sm backdrop-blur-sm"
+            >
+              <h3 className="text-xl font-semibold text-gray-100 mb-3">
+                네트워킹
+              </h3>
+              <p className="text-gray-200">
+                동종업계 현직자와 취준생들과 소통하며 인사이트를 공유하세요.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="bg-white/10 p-6 rounded-lg shadow-sm backdrop-blur-sm"
+            >
+              <h3 className="text-xl font-semibold text-gray-100 mb-3">
+                커리어 상담
+              </h3>
+              <p className="text-gray-200">
+                경력자들의 조언을 통해 기술 기반 PM으로의 전환을 준비하세요.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="relative py-20 bg-transparent z-10 overflow-hidden">
+        {/* 은은한 그라데이션 배경 */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          {sectionGradients.map((g, i) => (
+            <div key={i} style={g.style} className={g.className}></div>
+          ))}
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h2 className="text-3xl font-bold text-white mb-6">
+            지금 바로 기술 기반 PM으로의 전환을 시작하세요
+          </h2>
+          <p className="text-xl text-indigo-100 mb-8">
+            AI 시대를 이끌어갈 기술 기반 PM이 되고 싶은 모든 분들을 환영합니다
+          </p>
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href="https://discord.gg/argBtG44"
             target="_blank"
             rel="noopener noreferrer"
+            className="inline-flex items-center px-8 py-4 border-2 border-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 rounded-full text-lg font-bold text-white bg-transparent hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-400 hover:to-blue-400 hover:text-[#0a2342] transition drop-shadow"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+            디스코드 참여하기
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+    </main>
   );
 }
