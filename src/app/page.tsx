@@ -107,7 +107,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-2xl sm:text-3xl text-white mb-8 drop-shadow"
         >
-          기술 기반 PM으로의 전환, <br /> 지금이 &quot;적기&quot;입니다
+          기술 기반 PM으로의 전환, <br /> 지금이 적기입니다
         </motion.p>
         <motion.a
           initial={{ opacity: 0, y: 20 }}
