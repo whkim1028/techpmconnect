@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     siteName: "테크 PM 커넥트",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://tech-pm-connect.netlify.app/og-image.png?v=1",
         width: 1200,
         height: 630,
         alt: "테크 PM 커넥트",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "테크 PM 커넥트",
     description: "기술 기반 PM으로의 전환, 지금이 적기입니다",
-    images: ["/og-image.png"],
+    images: ["https://tech-pm-connect.netlify.app/og-image.png?v=1"],
   },
 };
 

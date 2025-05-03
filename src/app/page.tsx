@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const gradients = [
   // 각 레이어별로 다른 색상, 위치, 애니메이션 딜레이
@@ -72,6 +73,16 @@ const sectionGradients = [
 ];
 
 export default function Home() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <main className="min-h-screen bg-[#0a2342] relative overflow-hidden">
       {/* 몽환적 그라데이션 배경 레이어 (Hero) */}
@@ -96,9 +107,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-2xl sm:text-3xl text-white mb-8 drop-shadow"
         >
-          <p>
-            기술 기반 PM으로의 전환, <br /> 지금이 &quot;적기&quot;입니다
-          </p>
+          기술 기반 PM으로의 전환, <br /> 지금이 &quot;적기&quot;입니다
         </motion.p>
         <motion.a
           initial={{ opacity: 0, y: 20 }}
