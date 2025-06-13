@@ -118,7 +118,7 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                href="https://discord.gg/ge6wHxzN"
+                href="https://discord.gg/EbxeHedZcY"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-8 py-4 border-2 border-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 rounded-full text-lg font-bold text-white bg-transparent hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-400 hover:to-blue-400 hover:text-[#0a2342] transition drop-shadow"
@@ -324,7 +324,7 @@ export default function Home() {
             AI 시대를 이끌어갈 Tech PM이 되고 싶은 모든 분들을 환영합니다
           </p>
           <a
-            href="https://discord.gg/ge6wHxzN"
+            href="https://discord.gg/EbxeHedZcY"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center px-8 py-4 border-2 border-gradient-to-r from-pink-400 via-yellow-400 to-blue-400 rounded-full text-lg font-bold text-white bg-transparent hover:bg-gradient-to-r hover:from-pink-400 hover:via-yellow-400 hover:to-blue-400 hover:text-[#0a2342] transition drop-shadow"
